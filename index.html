@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "tertiary-fixed": "#74ff76",
+                "error-container": "#ffdad6",
+                "on-primary-container": "#fefcff",
+                "on-tertiary-fixed": "#002203",
+                "on-secondary-fixed": "#1f1c00",
+                "surface-container": "#eff1ca",
+                "surface-variant": "#e3e5c0",
+                "inverse-on-surface": "#f2f4cd",
+                "on-secondary-container": "#6c6400",
+                "on-primary-fixed-variant": "#004492",
+                "surface-container-low": "#f4f6d0",
+                "on-primary": "#ffffff",
+                "background": "#fafcd5",
+                "secondary-fixed": "#f6e620",
+                "inverse-primary": "#acc7ff",
+                "primary-fixed": "#d7e2ff",
+                "primary": "#0059ba",
+                "surface-container-highest": "#e3e5c0",
+                "secondary-container": "#f3e31c",
+                "inverse-surface": "#303219",
+                "tertiary-fixed-dim": "#55e15d",
+                "on-tertiary-container": "#f7fff1",
+                "tertiary": "#006b19",
+                "secondary": "#676000",
+                "on-secondary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "outline": "#717785",
+                "surface-dim": "#dbddb8",
+                "surface-container-lowest": "#ffffff",
+                "on-error-container": "#93000a",
+                "on-secondary-fixed-variant": "#4e4800",
+                "tertiary-container": "#008822",
+                "surface": "#fafcd5",
+                "outline-variant": "#c1c6d5",
+                "surface-tint": "#005bbf",
+                "surface-bright": "#fafcd5",
+                "on-surface-variant": "#414753",
+                "surface-container-high": "#e9ebc5",
+                "on-surface": "#1b1d06",
+                "on-error": "#ffffff",
+                "primary-container": "#0071e9",
+                "secondary-fixed-dim": "#d8ca00",
+                "primary-fixed-dim": "#acc7ff",
+                "error": "#ba1a1a",
+                "on-background": "#1b1d06",
+                "on-tertiary-fixed-variant": "#005311",
+                "on-primary-fixed": "#001a40"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.5rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "container-max": "1280px",
+                "gutter": "24px",
+                "margin-mobile": "16px",
+                "margin-desktop": "40px",
+                "base": "8px"
+              },
+              "fontFamily": {
+                "headline": ["Inter"],
+                "display": ["Inter"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-ambient { box-shadow: 0 4px 20px -2px rgba(0, 89, 186, 0.08); }
+        .animate-scroll {
+            display: flex;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+<title>Início - Toca do Coelho</title>
+<style id="toca-navigation-fix">
+  /* Menu sempre visível e clicável, inclusive quando aberto pelo celular. */
+  .main-site-menu {
+    display: flex !important;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .main-site-menu a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    header > div,
+    header nav {
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+    .main-site-menu {
+      width: 100%;
+      justify-content: center;
+      overflow-x: auto;
+      padding-top: .5rem;
+      gap: 1rem;
+    }
+    .main-site-menu a {
+      white-space: nowrap;
+      font-size: .85rem;
+    }
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-2xl font-bold text-primary">
+            Toca do Coelho
+        </div>
+<nav class="main-site-menu flex gap-8 items-center">
+<a class="text-sm font-semibold text-primary border-b-2 border-primary pb-1" href="./index.html">Início</a>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors duration-200" href="./produtos.html">Produtos</a>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors duration-200" href="./promocoes.html">Promoções</a>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors duration-200" href="./sobre.html">Sobre Nós</a>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors duration-200" href="./contato.html">Contato</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Buscar produtos..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<a class="bg-tertiary text-on-tertiary px-6 py-2 rounded-full text-sm font-bold flex items-center gap-2 hover:opacity-90 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">chat</span>
+                WhatsApp
+            </a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full aspect-[16/9] md:aspect-[21/9] flex items-center overflow-hidden">
+<img alt="Cozinha comercial premium" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCDhI3xfS3qZJfmSWsY2bCLEN0WnexusyMesTRkHArgFif_Na18sl4olVBDTeavuZ79vgN07dZqKL9TNdyh-tVr7h8bUP15VnTeofkw69dkF1aMa8rOON6glbum6b7i0ViTkyNONKWYFamLJ6ASDiTNk_bXYGdPWiziS1URtCZT1NCnyfTggH-iShYasUS1AwizJ0GUjwVqm-9bkdsDoYaIpcBZ7DTgxjb6o3yS1SGepVT3-WDtQMt9iGDrrbRMmppX7ZVfYqcsMwz"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-primary-fixed/90 to-transparent"></div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full text-white">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Tudo para sua casa, cozinha e negócio em um só lugar.</h1>
+<p class="text-lg md:text-xl mb-8 opacity-90">Desde 1996 oferecendo tradição, variedade e o melhor atendimento de Porto Velho.</p>
+<div class="flex gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-wider hover:brightness-110 transition-all" href="./produtos.html" role="button" style="text-decoration: none">Ver Produtos</a>
+<a class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-white/10 transition-colors" href="./contato.html" role="button" style="text-decoration: none">Fale Conosco</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Differentials -->
+<section class="py-16 bg-surface-bright">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<h3 class="text-xl font-bold mb-2 text-on-surface">Variedade</h3>
+<p class="text-sm text-on-surface-variant">Mais de 5.000 itens em estoque.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h3 class="text-xl font-bold mb-2 text-on-surface">Expertise</h3>
+<p class="text-sm text-on-surface-variant">Consultores especialistas no ramo.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<h3 class="text-xl font-bold mb-2 text-on-surface">Entrega Local</h3>
+<p class="text-sm text-on-surface-variant">Rapidez em toda Porto Velho.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+<h3 class="text-xl font-bold mb-2 text-on-surface">Tradição</h3>
+<p class="text-sm text-on-surface-variant">Desde 1996 servindo RO.</p>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="py-20 max-w-container-max mx-auto px-margin-desktop">
+<h2 class="text-3xl font-bold mb-12 text-on-surface border-l-4 border-primary pl-6">Nossas Categorias</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="group relative h-80 rounded-2xl overflow-hidden shadow-md">
+<img alt="Eletrodomésticos" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYAr1-F910m5T4QNmQTF6JVHglsbYRz8dj0HMWWbc0SBmMl0XRoVfLtKDXYqdhPCzrjKFj0AKgK3wCprl1XLhYYu5q3x8WEUIFDfb214ILr1K7suSjAUj2DzKS1lI950Cj9S72iQibdws7WgVK_z3c34_kiavWWkCBaV92RmlmdvCqv_KvVw09N6K1Y_tABu-SWkdKXemCTARyqlqLCNF7yDpBCdXiceWhTCQV6RN1RQCIvR1uuO_uO-QGHzYGsJ9FBgbYMMIJ7eyK"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-xl font-bold">Eletrodomésticos</h3>
+<p class="text-sm opacity-80">Tecnologia para seu dia a dia</p>
+</div>
+</div>
+<div class="group relative h-80 rounded-2xl overflow-hidden shadow-md">
+<img alt="Utilidades" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfZ2f17CIknKptO15_1LZ1SwfIYhyOmTU_IhhdX5WTQ80jhzCaDXb3AWNZeG4JLyudZJo651B2rIxmnWu0jhvlu6uf2EKNOosQlj0PtQj26HLpE3SOqFhBpY5lJ_qlopYbkFVKuChMBcyoRcUOy9SuuaEfAVZCLLQoeYQ-dgfq9ARYrzhJNAYJ9t733KFh5bawqxuvsD52n-tSj0TDjkQia37k-fLJgVRtjMZv0otD__rQsREFzWtrQQTCiF0R2XosLNp7rlAPPWDF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-xl font-bold">Utilidades</h3>
+<p class="text-sm opacity-80">Praticidade em cada detalhe</p>
+</div>
+</div>
+<div class="group relative h-80 rounded-2xl overflow-hidden shadow-md">
+<img alt="Bares e Restaurantes" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVvjKnPCW7v-BCHXERB5bXAys_px5a8R9j7WPc2SN385CuC5_J-kiHb_VlJO0fm_z3NfhKPv593JUj5a5wfTFHo7Wh9mf5h-Lrh3ChXmPNn4IUWbQZm06fw_tb5gMxjaFohUdoKaY8VZ0dPxua2V4GPJfPRKCrzNTHr8sL0C8Zm_6JCY4z7pc32atOZHM2yYRQ2ZMYZ_BlaOaoX-h5dGO2RsemdErO9pBIUhBDXyM9Uidmx0IBB9EYquZin5udH4coPPV_C4T9XFsa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-xl font-bold">Bares e Restaurantes</h3>
+<p class="text-sm opacity-80">Equipamentos profissionais</p>
+</div>
+</div>
+<div class="md:col-span-1 group relative h-64 rounded-2xl overflow-hidden shadow-md">
+<img alt="Cozinha" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEnewaoJsciQ5QvKVnYud8loLJZPhc2L1-EGvNuETtJpTCxtwLk6pJVbvql8fTKx8l6tCNgP2Lp38IpamLVJOP0YSVXdUswOaFDue7JBHsOch1Iccsn-6pUEccdD4HsTaob0O1BHUjupc7AZUSu86ChGc0yh2rcZGMRjg1QaESYGtEIOPF1jJokrBa2DKcXNd40sPe0U8b01Zw4ymLIkoTPiXZk-6XUoK7El3dgiwfAR1WDVJyG6vG5uIOQQ6mjhGilEKAaDL278tF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-xl font-bold">Cozinha</h3>
+</div>
+</div>
+<div class="md:col-span-1 group relative h-64 rounded-2xl overflow-hidden shadow-md">
+<img alt="Organização" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsCMsUvvDH9D-I-HCHnk-aG56UNFmLmj3AeMbJ_SIL17plB10zHzRHc55oTNgB2BNtNiYMt-gvWvLgkXLXxCtrEk9lxqSKqmTVlBNGAMuoxtN1yZDwC02Zwiwx_LYlcP7DtmGT1D_XlggtqoRNh2PULIkfo4vZ8QCzlYJ1ss0BJCgPRaad2WAt1Y3-lFYuDKinpXfTjhweBHf8DKIamgN6-xVg-gAmEK4cCy-ob-wMfrRKRR3KjqUZj-jdI81y5kCZUy-tRTxz0Cib"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-xl font-bold">Organização</h3>
+</div>
+</div>
+<div class="md:col-span-1 group relative h-64 rounded-2xl overflow-hidden shadow-md border-2 border-tertiary">
+<img alt="Promoções" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9MeAbXeMBS8rrJ5MO7Xj0Dd_Y2L0BQ3GMZipY3EfaiMV8aF1WZVvZidfRtABOBQMHnlQSDKiw_IN6Q4hLooOgOyrbseHUbRROfo5GFjSePbEIa-8nS5yQEoLhsUIdWNn8ja5Fq2NVHJK1tW66b5ZmajnEtvlPkVcu7MOFPVkJ61WPjuegJ_zqHwBrHrydJl40URRGeB43AFNoFiWuXurbdbGmHH_y0DqTMmYHoSh3q61pB3RBPuYIvO3ELjp1MR14rBaQIO7cQ1iG"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<h3 class="text-xl font-bold">Promoções</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="py-20 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+<div>
+<h2 class="text-3xl font-bold text-on-surface">Destaques da Semana</h2>
+<p class="text-on-surface-variant">Os itens mais procurados pelos chefs e donas de casa.</p>
+</div>
+<a class="text-primary font-bold text-sm border-b-2 border-primary hover:pb-1 transition-all" href="./produtos.html" role="button" style="text-decoration: none">Ver todos</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow border border-outline-variant/50 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4 bg-surface-bright flex items-center justify-center relative">
+<img alt="Batedeira" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUgEIAn9DL9c_PYt_XHzIKEF9F8km4OnPhDm7m5BKFSKGvMFN9EvVxHD3o94Lm-4vSwhsqFUFesLWziEZYrWl9S4A0CAWgarfz0aCmzdazwAIzGvQaI26QxayQLiNkKcfepqeBUWT6sMZSF_4ykTp4Rz0I5Vqxr414bwivAvPTZyTHQ0GtoYLcKAm3D_fD56XUDVHlFxKOPMyd93hRsR61D7WH-m82Qnz6LJxBMV5U5zq8IAw8r4SkTxy80b26A3qGzeFZUFse6J00"/>
+<div class="absolute top-2 right-2 bg-tertiary text-on-tertiary font-bold text-[10px] px-2 py-1 rounded">DESTAQUE</div>
+</div>
+<h4 class="font-bold text-on-surface mb-1">Batedeira Planetária Profissional</h4>
+<p class="text-xs text-on-surface-variant mb-4">Potência e durabilidade para grandes massas.</p>
+<a class="w-full bg-tertiary text-on-tertiary py-3 rounded-lg flex items-center justify-center gap-2 text-xs font-bold hover:brightness-105 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-sm">chat</span>
+                    Consultar no WhatsApp
+                </a>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow border border-outline-variant/50 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4 bg-surface-bright flex items-center justify-center relative">
+<img alt="Kit de Facas" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxblloYc0D2HMdhZAY5KFeMK01yPoUyUm5Is8h3xCScEG3KFv5k0Pkn7LHl6QQO7dEmJ-9aRLywNFYF6Jo-GN19QYAxf2iRRtobg75qfR5Q-ImIaoRoqiWf7eVVzwqVst5b4iEy5Ja8PRm_sG3xK7Dkx9HXCi5oCx_VnOykWFYHEQsuAQg3I9L1sRIAyrAAxKPl9f3lHyFVU9JKBvsjvK9CjhaekHVfVRtGmkbOPzMOD8xmfPsecXvQ6URl5xm2m5Bfi1lpL7Fco-u"/>
+</div>
+<h4 class="font-bold text-on-surface mb-1">Kit de Facas Premium (6 peças)</h4>
+<p class="text-xs text-on-surface-variant mb-4">Aço inox de alta resistência e corte preciso.</p>
+<a class="w-full bg-tertiary text-on-tertiary py-3 rounded-lg flex items-center justify-center gap-2 text-xs font-bold hover:brightness-105 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-sm">chat</span>
+                    Consultar no WhatsApp
+                </a>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow border border-outline-variant/50 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4 bg-surface-bright flex items-center justify-center relative">
+<img alt="Liquidificador" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4jaYTMLsRCP0LIpse445eMZ92AbX6H-uvPDXQQZs4yTZmvY4jpvnkVF6y3TeXDAJwN7ZObsLcRVoBWsYKdqxhN7g3IWuURLU23mjeQRSa6d9Lg252U2-b0ZEMssU1G0ZM0CDU7d6ibp8MV8O5ywXPjZIDldTWrAG271HkVSeCM3vfBrnGHuDaAjuuV0p5n7aL2kuLdEeIBSdWMW4MYDy7v8RW4Y5dLQi3fgcFGgj6PIIyQv_LPjy-QwEMG-Zc6Bf8Pe8SsIik-B0T"/>
+</div>
+<h4 class="font-bold text-on-surface mb-1">Liquidificador Comercial 2L</h4>
+<p class="text-xs text-on-surface-variant mb-4">Ideal para estabelecimentos e alta demanda.</p>
+<a class="w-full bg-tertiary text-on-tertiary py-3 rounded-lg flex items-center justify-center gap-2 text-xs font-bold hover:brightness-105 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-sm">chat</span>
+                    Consultar no WhatsApp
+                </a>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow border border-outline-variant/50 group">
+<div class="aspect-square rounded-lg overflow-hidden mb-4 bg-surface-bright flex items-center justify-center relative">
+<img alt="Jogo de Potes" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg9JN-IuNRzzKDYKsT7B9tOqLbNPmOixRPOwV_JCF8gZ1xJMUm8S1VmUjNwT55VcWo-exeJUdEaRBXdBgmyjQFCEYMflTs6OmT9l7jD4K4A8JyP6rao15GS_LlsJpo2hiGXucA6FCoJ3-0aUJBRp5rz9XBERqxKVc88yK5S7dR2Pp3pguMaL7Nu3jI-ZL0FUo3rnjQKVLyLE3gEt9uyiJgwKuundxtXuMXIw4P23pxwePh_aKJlddQ0iB0-5cp9BSckPUBSvHnoqzW"/>
+</div>
+<h4 class="font-bold text-on-surface mb-1">Jogo de Potes de Vidro Herméticos</h4>
+<p class="text-xs text-on-surface-variant mb-4">Organização e conservação com elegância.</p>
+<a class="w-full bg-tertiary text-on-tertiary py-3 rounded-lg flex items-center justify-center gap-2 text-xs font-bold hover:brightness-105 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-sm">chat</span>
+                    Consultar no WhatsApp
+                </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof / Instagram Feed -->
+<section class="py-20 overflow-hidden bg-surface-bright">
+<div class="max-w-container-max mx-auto px-margin-desktop mb-12 text-center">
+<h2 class="text-3xl font-bold text-on-surface mb-2">Siga nossa trajetória @tocadocoelho</h2>
+<p class="text-on-surface-variant">Confira as novidades e dicas no nosso Instagram</p>
+</div>
+<div class="flex gap-4 animate-scroll whitespace-nowrap px-4">
+<!-- Using original images, they look good -->
+<div class="w-72 h-72 rounded-xl flex-shrink-0 overflow-hidden shadow-sm">
+<img alt="Instagram 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHVBDejMuw2KDllS3OOmsrSByzJsmfhu0XGLifeoaz7X48iWAHDSxZroWehmChM7PjacNgOQipqRtVJ9v0blVLbjvFjhBYwb-4-BWz5pYqAMTk1PTOfGPRd2FOwG3HiX3EwzUJ7GgaGT1-00D8fFcKIN_2CujnXutIvvWKBGn81fsqW3y9ASK2F6mw7I0800L9xf84MwtFaMTcJookkhlEUO5CyzSUuYEJR2eH0luD3zWg-H3yPfJeTXARDP5g6N_Wdv1uKx-5qH9J"/>
+</div>
+<div class="w-72 h-72 rounded-xl flex-shrink-0 overflow-hidden shadow-sm">
+<img alt="Instagram 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxVV9y2DWOMlz-67ICd2Bw4fHe3ESi6npAMCeKiarQf2YlTbltWqN7KbnPRYsV4-bBgoU7H77fxY1jyYM46-aGFVw2lziS_fg_cF2v3tJzx4iYjB4262B0wBEb8KHCE01Zt_31zn9AWBvoMffqVIIdggu3dkFK_aaE9iqherPAE22ur47_LCTFnyv6kHoG69k1lkfwrpgZCvEsjXNby5LQTeJ_cJMPb8CnqTNO5Jjed0x2vRRPJEMTep_r0OpOSSxfFSFmfVUvnjkr"/>
+</div>
+<div class="w-72 h-72 rounded-xl flex-shrink-0 overflow-hidden shadow-sm">
+<img alt="Instagram 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVw0q8b_vnMMNWQktGVpSUVjc883JTgMa7xvpVibLwZpPKr0e0YLspevlAhiRTuWJy36yNduiYg4VD7wVnC8_GFmIgRPzHqPU5E-qHRJsGDaK-VS0caz40jEbYeH8gBzUQfUaJk3CD7xge-Eg7TMbM4t7IXMPjTCvKBiSRsCA6xF6RSbvL7BYoXb9VsFsMOeAeLZe2q8-NDTKwk4HGH57oYb3HrvE-k7bBP6Ht1bXX-g2XVHsNna1H46EmbEzTcXkgpySAhBvYVhQQ"/>
+</div>
+<div class="w-72 h-72 rounded-xl flex-shrink-0 overflow-hidden shadow-sm">
+<img alt="Instagram 4" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq3MHuVrj4DXW44qDKV_9_MhPo0ZcKfP0IMYUXxUGYLQ9b2vttHZCNkDngQU1prh0Qrks30VfwJnAVHeiXc4ezajo4ml0u3ygMn7ZTwQb1jTS6CiB2V69l13Xu8kqj0yzElTob9xqhenMDXpTGj_IUutRr98CP3pzGgd_p9vuw7iUzhxkC46drkT9mO7f-rmMRiMaKw_XtFwJDfaWZJIcsTXe0CrXIBClAqazIgueLMTQghwNmQHTTNGphz0BGVwpkLVufQTKjWxmk"/>
+</div>
+<div class="w-72 h-72 rounded-xl flex-shrink-0 overflow-hidden shadow-sm">
+<img alt="Instagram 5" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0JpwxjWU47czoh5xhmzxsourqi_o5emhdBfLEv2xhKn_DDgUVtVaVsIK_TvQlZELbDA7ivxM-3xnmTEz2b7D0xUee1wPMkXpEn9X7TUh3hdPtZ6R-B0pdJo0-Q0B0VZV5BDmfGtLvJlHPiMgrv_N9o9YfJ353Qbry3rX6WQw9r0eLAhXD8saKznPxtvPlnAwreJYEM7EYn6YarJra5JW-m9ju42EpYLe8BTaJ5Y3Q9p1Us-TOukqzDtt6EcClcQFoVfSftOxEGnHw"/>
+</div>
+<!-- Duplicated for seamless loop -->
+<div class="w-72 h-72 rounded-xl flex-shrink-0 overflow-hidden shadow-sm">
+<img alt="Instagram 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHVBDejMuw2KDllS3OOmsrSByzJsmfhu0XGLifeoaz7X48iWAHDSxZroWehmChM7PjacNgOQipqRtVJ9v0blVLbjvFjhBYwb-4-BWz5pYqAMTk1PTOfGPRd2FOwG3HiX3EwzUJ7GgaGT1-00D8fFcKIN_2CujnXutIvvWKBGn81fsqW3y9ASK2F6mw7I0800L9xf84MwtFaMTcJookkhlEUO5CyzSUuYEJR2eH0luD3zWg-H3yPfJeTXARDP5g6N_Wdv1uKx-5qH9J"/>
+</div>
+</div>
+<!-- Testimonials -->
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-low p-8 rounded-2xl relative border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary absolute top-6 right-6 text-4xl opacity-20">format_quote</span>
+<p class="text-on-surface italic mb-6">"Melhor lugar em Porto Velho para quem está montando um negócio. Atendimento nota 10 e produtos que duram a vida toda."</p>
+<div class="font-bold text-primary">Ricardo Almeida</div>
+<div class="text-sm text-on-surface-variant">Dono de Restaurante</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl relative border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary absolute top-6 right-6 text-4xl opacity-20">format_quote</span>
+<p class="text-on-surface italic mb-6">"Encontro desde panelas específicas até os eletros mais modernos. A Toca do Coelho é tradição na minha família há anos."</p>
+<div class="font-bold text-primary">Maria Helena Santos</div>
+<div class="text-sm text-on-surface-variant">Dona de Casa</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl relative border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary absolute top-6 right-6 text-4xl opacity-20">format_quote</span>
+<p class="text-on-surface italic mb-6">"A variedade é impressionante. Sempre que preciso de algo urgente para minha confeitaria, corro lá e eles têm a pronta entrega."</p>
+<div class="font-bold text-primary">Ana Clara Lima</div>
+<div class="text-sm text-on-surface-variant">Chef Confeiteira</div>
+</div>
+</div>
+</section>
+<!-- Final CTA & Contact -->
+<section class="bg-primary-container py-20 text-on-primary relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<img alt="Interior Loja" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDcd4Av5IWF94oHywBm7J7WmHeEcMkw3Itgnx-j-IQqVEiwc5G9jvDJqcVpJJ641yOdIB9MPPBZuUw-zaG62_XkueT3Qd0IheD19YmkfC1wtEYiXMHxMxFIJSfCmnH8iDUcfhLN7oM9OwNY2nduhc72U_cpxv1UpfP29eMaPPElMu2X3l7kEVe4gTXsmmfABOg3XBmgR1y2Vf5v9-Qb9jVSM6kwVK7PTwp5V6dOkbKxYkQL7T7tM2Gkqu5ysPj0VOtyjBbMALJuaAH"/>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-4xl font-bold mb-6">Pronto para transformar seu espaço?</h2>
+<p class="text-lg mb-8 opacity-90 text-on-primary-container">Visite nossa loja física ou solicite um orçamento agora mesmo pelo WhatsApp. Nossa equipe está pronta para te atender com a expertise que você merece.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed">location_on</span>
+<span class="text-base text-on-primary-container">Av. Sete de Setembro, 1234 - Centro, Porto Velho - RO</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed">call</span>
+<span class="text-base text-on-primary-container">(69) 3221-XXXX</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest/10 backdrop-blur-md p-10 rounded-3xl border border-white/20 text-center">
+<h3 class="text-2xl font-bold mb-6">Atendimento Imediato</h3>
+<p class="mb-8 opacity-80 text-on-primary-container">Fale com um de nossos especialistas e tire suas dúvidas agora.</p>
+<a class="w-full bg-tertiary text-on-tertiary py-6 rounded-2xl flex items-center justify-center gap-4 text-2xl font-bold shadow-lg hover:scale-105 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                Falar via WhatsApp
+            </a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-on-primary-fixed text-on-primary-fixed-variant">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-16 max-w-container-max mx-auto">
+<div>
+<div class="text-2xl font-bold text-white mb-6">Toca do Coelho</div>
+<p class="text-sm opacity-80 mb-6 max-w-xs text-on-primary-fixed-variant">
+                Referência em utilidades domésticas e equipamentos profissionais em Rondônia. Tradição e qualidade desde 1996.
+            </p>
+<div class="flex gap-4">
+<a class="text-white hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">Notebook</span></a>
+<a class="text-white hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-xs font-bold uppercase tracking-widest text-white mb-2">Informações</h4>
+<a class="text-sm opacity-80 hover:text-white transition-colors underline" href="./sobre.html">Sobre Nós</a>
+<a class="text-sm opacity-80 hover:text-white transition-colors underline" href="#">Política de Privacidade</a>
+<a class="text-sm opacity-80 hover:text-white transition-colors underline" href="#">LGPD</a>
+<a class="text-sm opacity-80 hover:text-white transition-colors underline" href="#">Trabalhe Conosco</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-xs font-bold uppercase tracking-widest text-white mb-2">Contato</h4>
+<p class="text-sm opacity-80">Horário: Seg-Sex 08h-18h</p>
+<p class="text-sm opacity-80">Sábados: 08h-12h</p>
+<p class="text-sm opacity-80">comercial@tocadocoelho.com.br</p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-white/10 text-center">
+<p class="text-xs opacity-60">
+            © 2024 Toca do Coelho. Todos os direitos reservados. Porto Velho, RO. CNPJ: XX.XXX.XXX/0001-XX
+        </p>
+</div>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-tertiary text-on-tertiary rounded-full flex items-center justify-center shadow-2xl z-[60] hover:scale-110 transition-transform group" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho.">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="absolute right-20 bg-surface-container-lowest text-primary px-4 py-2 rounded-lg text-sm font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Fale Conosco</span>
+</a>
+
+<script id="toca-navigation-fallback">
+  // Fallback simples para navegação local: mantém os links funcionando ao abrir pelo arquivo index.html.
+  document.addEventListener('click', function (event) {
+    var card = event.target.closest('[data-product-detail]');
+    if (card && !event.target.closest('a, button, input, label, select, textarea')) {
+      window.location.href = './detalhes-produto-toca-coelho.html';
+    }
+  });
+</script>
+</body></html>

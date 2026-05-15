@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#74ff76",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#fefcff",
+                        "on-tertiary-fixed": "#002203",
+                        "on-secondary-fixed": "#1f1c00",
+                        "surface-container": "#eff1ca",
+                        "surface-variant": "#e3e5c0",
+                        "inverse-on-surface": "#f2f4cd",
+                        "on-secondary-container": "#6c6400",
+                        "on-primary-fixed-variant": "#004492",
+                        "surface-container-low": "#f4f6d0",
+                        "on-primary": "#ffffff",
+                        "background": "#fafcd5",
+                        "secondary-fixed": "#f6e620",
+                        "inverse-primary": "#acc7ff",
+                        "primary-fixed": "#d7e2ff",
+                        "primary": "#0059ba",
+                        "surface-container-highest": "#e3e5c0",
+                        "secondary-container": "#f3e31c",
+                        "inverse-surface": "#303219",
+                        "tertiary-fixed-dim": "#55e15d",
+                        "on-tertiary-container": "#f7fff1",
+                        "tertiary": "#006b19",
+                        "secondary": "#676000",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#717785",
+                        "surface-dim": "#dbddb8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#4e4800",
+                        "tertiary-container": "#008822",
+                        "surface": "#fafcd5",
+                        "outline-variant": "#c1c6d5",
+                        "surface-tint": "#005bbf",
+                        "surface-bright": "#fafcd5",
+                        "on-surface-variant": "#414753",
+                        "surface-container-high": "#e9ebc5",
+                        "on-surface": "#1b1d06",
+                        "on-error": "#ffffff",
+                        "primary-container": "#0071e9",
+                        "secondary-fixed-dim": "#d8ca00",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1d06",
+                        "on-tertiary-fixed-variant": "#005311",
+                        "on-primary-fixed": "#001a40"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+<title>Promoções - Toca do Coelho</title>
+<style id="toca-navigation-fix">
+  /* Menu sempre visível e clicável, inclusive quando aberto pelo celular. */
+  .main-site-menu {
+    display: flex !important;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .main-site-menu a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    header > div,
+    header nav {
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+    .main-site-menu {
+      width: 100%;
+      justify-content: center;
+      overflow-x: auto;
+      padding-top: .5rem;
+      gap: 1rem;
+    }
+    .main-site-menu a {
+      white-space: nowrap;
+      font-size: .85rem;
+    }
+  }
+</style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">
+                Toca do Coelho
+            </div>
+<div class="main-site-menu flex gap-8 items-center">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="./index.html">Início</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="./produtos.html">Produtos</a>
+<a class="text-primary border-b-2 border-primary pb-1 transition-colors duration-200" href="./promocoes.html">Promoções</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="./sobre.html">Sobre Nós</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="./contato.html">Contato</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant/30 rounded-lg focus:outline-none focus:border-primary transition-all" placeholder="Buscar ofertas..." type="text"/>
+</div>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-caps text-label-caps hover:brightness-110 transition-all flex items-center gap-2" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">Chat</span>
+                    WHATSAPP
+                </a>
+</div>
+</div>
+</nav>
+<!-- Promotional Hero Section -->
+<header class="relative w-full overflow-hidden py-24 bg-primary-container text-on-primary-container">
+<div class="absolute inset-0 opacity-10">
+<img class="w-full h-full object-cover" data-alt="A high-end professional kitchen with stainless steel appliances, clean surfaces, and warm overhead lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYDJLNlW6Css-y_3spG5MSei-0wCKrGiyrOJmxk-gdvL61Myz6jQ2i3IC6JtOcDm-UksWkfofd9VXPugFvGiBJUDSt0b438uJa8nyIhsFczSJnekqFk4bt7bQkR08Uc5fao2_RXoQabNWRKb2s5Rns8QLROOnjIjFs4WzfBUqia4Wgs866iJa9QxOGPOMSB4uEHuWHI9GQfmv59jDFVFLcoQgFI1R58IcH3gjoFQ3T5C8Ji6m0MtUQTI45mi9Qb4GCHCFpbKgsIsKS"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="max-w-2xl">
+<span class="inline-block bg-tertiary text-on-tertiary px-4 py-1 rounded-full font-label-caps text-label-caps mb-6">OPORTUNIDADE ÚNICA</span>
+<h1 class="font-headline-lg text-headline-lg mb-6 leading-tight text-white">Ofertas Imperdíveis para sua Cozinha</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-8">Equipamentos profissionais e utensílios premium com descontos exclusivos. Renove seu espaço com quem entende de gastronomia há décadas.</p>
+<div class="flex gap-4">
+<a class="bg-tertiary text-on-tertiary px-8 py-4 rounded-lg font-headline-sm text-headline-sm transition-all hover:scale-105 active:scale-95 shadow-lg" href="./produtos.html" role="button" style="text-decoration: none">Aproveitar Agora</a>
+</div>
+</div>
+<!-- Urgency/Countdown -->
+<div class="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-xl text-center min-w-[300px]">
+<p class="font-label-caps text-label-caps mb-4 uppercase tracking-widest text-tertiary-fixed">Termina em:</p>
+<div class="flex justify-center gap-4 mb-4 text-white">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold">48</span>
+<span class="text-[10px] uppercase opacity-70">Horas</span>
+</div>
+<span class="font-headline-md text-headline-md">:</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold">15</span>
+<span class="text-[10px] uppercase opacity-70">Min</span>
+</div>
+<span class="font-headline-md text-headline-md">:</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold">32</span>
+<span class="text-[10px] uppercase opacity-70">Seg</span>
+</div>
+</div>
+<div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary-fixed h-full w-2/3"></div>
+</div>
+<p class="text-[12px] mt-4 text-white/70 italic font-body-sm">Estoque limitado em itens selecionados</p>
+</div>
+</div>
+</header>
+<!-- Promotional Category Banner -->
+<section class="max-w-container-max mx-auto px-margin-desktop -mt-12 relative z-20">
+<div class="bg-surface-container-highest rounded-xl p-8 flex flex-col md:flex-row items-center gap-8 shadow-md border border-outline-variant/20">
+<div class="w-24 h-24 bg-primary text-on-primary rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<div class="flex-grow text-center md:text-left">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Mês das Cozinhas Industriais</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Toda a linha de cocção e refrigeração profissional com até 30% de desconto e entrega imediata.</p>
+</div>
+<a class="border-2 border-primary text-primary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all" href="./produtos.html" role="button" style="text-decoration: none">Ver Categoria</a>
+</div>
+</section>
+<!-- Product Sale Grid -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-24">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Destaques da Semana</h2>
+<div class="w-16 h-1 bg-primary mt-2"></div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 border border-outline-variant rounded-full flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 border border-outline-variant rounded-full flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A professional-grade stainless steel kitchen mixer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH1zqTtwziz1yVSkOh2foJVG1NuBWETjuPQfRpvQCFF7M0LeFFmdURXJ7EpK7gqdAiEvH8AjltjtfW4ceQR5DvP_RPQLNrg6_aCPlbCYNoNnfI8YVCCRFRBy-NJUqABgTr4HUr3epDNdnB_k_bYx9Co37qgWIGQD6qkyRXxfx7mRiU3BRQUdq9KHatrxsWUj6kZiFgEKfRRBGsWHRgXXx-o_rZm36YFfRKwUEKfHp6YB4EJsuzDhtQwFOoAfJcJGjNv0jkDtZsTr9E"/>
+<div class="absolute top-4 left-4 bg-error text-on-error px-3 py-1 rounded-full font-label-caps text-label-caps">
+                        25% OFF
+                    </div>
+</div>
+<div class="p-6">
+<p class="font-label-caps text-label-caps text-outline mb-2 uppercase">Equipamentos</p>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-4 leading-snug">Batedeira Industrial 20L Premium</h4>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="font-body-sm text-body-sm text-outline line-through">R$ 4.290,00</span>
+<span class="font-headline-sm text-headline-sm text-primary">R$ 3.217,50</span>
+</div>
+<a class="w-full bg-primary text-on-primary py-3 rounded-lg flex items-center justify-center gap-2 font-label-caps text-label-caps hover:brightness-110 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">Chat</span>
+                        CONSULTAR NO WHATSAPP
+                    </a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A set of professional chef knives." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBMcI6F0wZej5ezSsXOBH8_RrPPU18qV_AYGP8RIknv1AJFA3R5e3ZhhMXvBuxczrqCbqhzBT-37v258bwRitTTMfbIugPxwTPy1tj_C0CGpGRSUxc5C53fwdMDr9cD6cbE9wKu-5bDenCPDFKdJkzDiR-JZQv5_j3aw6ZOBMkkh70xuMrUHdCbO5BRVybeAlqbvrwKl-lTd5OT6fnLJAuEyCwtnKevHCfjum7iU5il7XtKENYNLhcKVFU1oo8JIKKcQqkHLA0bD8a"/>
+<div class="absolute top-4 left-4 bg-error text-on-error px-3 py-1 rounded-full font-label-caps text-label-caps">
+                        15% OFF
+                    </div>
+</div>
+<div class="p-6">
+<p class="font-label-caps text-label-caps text-outline mb-2 uppercase">Utensílios</p>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-4 leading-snug">Kit Facas Chef Profissional (5 peças)</h4>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="font-body-sm text-body-sm text-outline line-through">R$ 850,00</span>
+<span class="font-headline-sm text-headline-sm text-primary">R$ 722,50</span>
+</div>
+<a class="w-full bg-primary text-on-primary py-3 rounded-lg flex items-center justify-center gap-2 font-label-caps text-label-caps hover:brightness-110 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">Chat</span>
+                        CONSULTAR NO WHATSAPP
+                    </a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Industrial-sized stainless steel pots and pans." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4JSTHKMmWLqRkQVYrKWF4UfT_ySGDnNjTFV6a9njYJyjzu0gUHVM5qEO7Pg7qNvsd5lm8khRkrk5nKxDK_G2UyOrwZHxHYJntHqo_JC6dM6ebij1SBeXyzdur2BPXyKpwpJ9pc7jnaVdQnwRsHoHaj1mRdIxMs7ye3S7oLmDQ2zyTqBwFalRFyO2gk7RHChylgnQKO4MM0ey3eSiDL1ND3HZPVX4vPcaPIIqK4Mbl_9JgDt0ZHL6tkZjeGbCo3_dpAqJLuiJpT2Ws"/>
+<div class="absolute top-4 left-4 bg-error text-on-error px-3 py-1 rounded-full font-label-caps text-label-caps">
+                        40% OFF
+                    </div>
+</div>
+<div class="p-6">
+<p class="font-label-caps text-label-caps text-outline mb-2 uppercase">Cocção</p>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-4 leading-snug">Jogo de Panelas Inox 3 Camadas</h4>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="font-body-sm text-body-sm text-outline line-through">R$ 1.200,00</span>
+<span class="font-headline-sm text-headline-sm text-primary">R$ 720,00</span>
+</div>
+<a class="w-full bg-primary text-on-primary py-3 rounded-lg flex items-center justify-center gap-2 font-label-caps text-label-caps hover:brightness-110 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">Chat</span>
+                        CONSULTAR NO WHATSAPP
+                    </a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A professional espresso machine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvwUg2xVfEULK2OlJnKxzVuBYd-Ew8_osRDWnYAdug9ZRmhL2lq3Pgpz0BIrddTOi3ZLceaZ1su1D4thBVEKHW2NDfEjEfzB5g0BAnsXbA7ba4YLBcV7nEZqMrfZr2o7ywygyWq3RTbfpueGrQWrMg5yw2AP5MJWVoJxM5UZht3Dec7GxWm-cHCL7F_BdW7JI1HrZWllIEu0BygFtYez4nXQePwKr5Bvyk_9WCcjy58R0GV6pCmBmcnO0XL4CRKtv2MwiLhySNJB8F"/>
+<div class="absolute top-4 left-4 bg-error text-on-error px-3 py-1 rounded-full font-label-caps text-label-caps">
+                        10% OFF
+                    </div>
+</div>
+<div class="p-6">
+<p class="font-label-caps text-label-caps text-outline mb-2 uppercase">Café &amp; Bar</p>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-4 leading-snug">Máquina de Espresso Italiana Pro</h4>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="font-body-sm text-body-sm text-outline line-through">R$ 5.900,00</span>
+<span class="font-headline-sm text-headline-sm text-primary">R$ 5.310,00</span>
+</div>
+<a class="w-full bg-primary text-on-primary py-3 rounded-lg flex items-center justify-center gap-2 font-label-caps text-label-caps hover:brightness-110 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">Chat</span>
+                        CONSULTAR NO WHATSAPP
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Information Section -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-xl border-8 border-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="The organized interior of a commercial kitchenware warehouse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2fcFdztEjOYk_feUqwaeuHKLxltEtAhzpATN3fYczxeZgGbRGgI1FUNobA5aLYFA-fVBo6cx7RITo4sfxabUj-OSSDRIwIY1X0x11cJ-5jo3blfEBbN531xq473a-DfVcnOwY9kv4IdNu8YnrJgrAGTQxKMnN_1_MJbfDkXV5RlU6qfDVc30xJpdhEPm2LhMIntovGZnJw_Pms3s3BmvuehYFK59lRSTUs7urjRZ5UQ0XGM_0tV1i3k6zDDXkryML0D1FpeiTg-wd"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-secondary-container text-on-secondary-container p-8 rounded-lg shadow-lg max-w-[240px]">
+<span class="material-symbols-outlined text-4xl mb-4">info</span>
+<h5 class="font-headline-sm text-[20px] mb-2 leading-tight">Como Funcionam Nossas Ofertas</h5>
+</div>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8">Compromisso com a Transparência</h2>
+<div class="space-y-8">
+<div class="flex gap-4">
+<div class="shrink-0 w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">1</div>
+<div>
+<h6 class="font-body-lg font-bold text-on-surface mb-2">Estoque Limitado</h6>
+<p class="font-body-md text-on-surface-variant">Todas as promoções são válidas enquanto durarem os nossos estoques físicos. Devido à alta rotatividade, a reserva de itens só é confirmada após o contato via WhatsApp.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="shrink-0 w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">2</div>
+<div>
+<h6 class="font-body-lg font-bold text-on-surface mb-2">Preços e Prazos</h6>
+<p class="font-body-md text-on-surface-variant">Os preços promocionais exibidos podem sofrer alterações sem aviso prévio. Os valores informados são para pagamento à vista; consulte condições de parcelamento.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="shrink-0 w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">3</div>
+<div>
+<h6 class="font-body-lg font-bold text-on-surface mb-2">Garantia Toca do Coelho</h6>
+<p class="font-body-md text-on-surface-variant">Mesmo em promoção, todos os nossos produtos mantêm a garantia total do fabricante e o suporte técnico especializado da nossa equipe em Porto Velho.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary-container">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<div class="font-headline-sm text-headline-sm font-bold text-white">
+                    Toca do Coelho
+                </div>
+<p class="text-white/80 font-body-sm">A autoridade em cozinhas profissionais e utensílios domésticos de alta qualidade em Rondônia.</p>
+<div class="flex gap-4 mt-2">
+<a class="text-white/80 hover:text-white transition-colors underline font-label-caps text-label-caps" href="#">Instagram</a>
+<a class="text-white/80 hover:text-white transition-colors underline font-label-caps text-label-caps" href="#">Facebook</a>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-label-caps text-label-caps text-white mb-4">INSTITUCIONAL</h4>
+<a class="text-white/80 hover:text-white transition-colors underline font-body-sm" href="./sobre.html">Sobre Nós</a>
+<a class="text-white/80 hover:text-white transition-colors underline font-body-sm" href="#">Política de Privacidade</a>
+<a class="text-white/80 hover:text-white transition-colors underline font-body-sm" href="#">LGPD</a>
+<a class="text-white/80 hover:text-white transition-colors underline font-body-sm" href="./contato.html">Contato</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-label-caps text-label-caps text-white mb-4">ATENDIMENTO</h4>
+<p class="text-white/80 font-body-sm">Horário: Seg-Sex 08h-18h</p>
+<p class="text-white/80 font-body-sm">Sábado: 08h-12h</p>
+<p class="text-white/80 font-body-sm">Porto Velho, RO.</p>
+</div>
+</div>
+<div class="border-t border-white/10 px-margin-desktop py-6 max-w-container-max mx-auto text-center">
+<p class="text-white/80 font-body-sm">© 2024 Toca do Coelho. Todos os direitos reservados. Porto Velho, RO.</p>
+</div>
+</footer>
+
+<script id="toca-navigation-fallback">
+  // Fallback simples para navegação local: mantém os links funcionando ao abrir pelo arquivo index.html.
+  document.addEventListener('click', function (event) {
+    var card = event.target.closest('[data-product-detail]');
+    if (card && !event.target.closest('a, button, input, label, select, textarea')) {
+      window.location.href = './detalhes-produto-toca-coelho.html';
+    }
+  });
+</script>
+</body></html>

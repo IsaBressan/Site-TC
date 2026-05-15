@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#74ff76",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#fefcff",
+                    "on-tertiary-fixed": "#002203",
+                    "on-secondary-fixed": "#1f1c00",
+                    "surface-container": "#eff1ca",
+                    "surface-variant": "#e3e5c0",
+                    "inverse-on-surface": "#f2f4cd",
+                    "on-secondary-container": "#6c6400",
+                    "on-primary-fixed-variant": "#004492",
+                    "surface-container-low": "#f4f6d0",
+                    "on-primary": "#ffffff",
+                    "background": "#fafcd5",
+                    "secondary-fixed": "#f6e620",
+                    "inverse-primary": "#acc7ff",
+                    "primary-fixed": "#d7e2ff",
+                    "primary": "#0059ba",
+                    "surface-container-highest": "#e3e5c0",
+                    "secondary-container": "#f3e31c",
+                    "inverse-surface": "#303219",
+                    "tertiary-fixed-dim": "#55e15d",
+                    "on-tertiary-container": "#f7fff1",
+                    "tertiary": "#006b19",
+                    "secondary": "#676000",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#717785",
+                    "surface-dim": "#dbddb8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#4e4800",
+                    "tertiary-container": "#008822",
+                    "surface": "#fafcd5",
+                    "outline-variant": "#c1c6d5",
+                    "surface-tint": "#005bbf",
+                    "surface-bright": "#fafcd5",
+                    "on-surface-variant": "#414753",
+                    "surface-container-high": "#e9ebc5",
+                    "on-surface": "#1b1d06",
+                    "on-error": "#ffffff",
+                    "primary-container": "#0071e9",
+                    "secondary-fixed-dim": "#d8ca00",
+                    "primary-fixed-dim": "#acc7ff",
+                    "error": "#ba1a1a",
+                    "on-background": "#1b1d06",
+                    "on-tertiary-fixed-variant": "#005311",
+                    "on-primary-fixed": "#001a40"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "display": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Updated texture to use system colors */
+        .bg-system-texture {
+            background-color: #ffffff;
+            background-image: radial-gradient(#d7e2ff 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+<title>Sobre Nós - Toca do Coelho</title>
+<style id="toca-navigation-fix">
+  /* Menu sempre visível e clicável, inclusive quando aberto pelo celular. */
+  .main-site-menu {
+    display: flex !important;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .main-site-menu a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    header > div,
+    header nav {
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+    .main-site-menu {
+      width: 100%;
+      justify-content: center;
+      overflow-x: auto;
+      padding-top: .5rem;
+      gap: 1rem;
+    }
+    .main-site-menu a {
+      white-space: nowrap;
+      font-size: .85rem;
+    }
+  }
+</style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline text-headline-sm font-bold text-primary">Toca do Coelho</div>
+<div class="main-site-menu flex items-center gap-8">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="./index.html">Início</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="./produtos.html">Produtos</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="./promocoes.html">Promoções</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md font-semibold" href="./sobre.html">Sobre Nós</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="./contato.html">Contato</a>
+</div>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-caps text-label-caps hover:brightness-110 transition-all flex items-center gap-2" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                WhatsApp
+            </a>
+</nav>
+</header>
+<main class="pt-16">
+<!-- Hero Section: Nossa História -->
+<section class="relative h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Nossa História Hero" class="w-full h-full object-cover brightness-[0.4]" data-alt="A cinematic, warm-toned interior shot of a sophisticated kitchenware showroom. The lighting is soft and golden, highlighting high-quality stainless steel pots and elegant ceramic dishes arranged on dark wooden shelves. The atmosphere is professional yet welcoming, reflecting a legacy of quality and tradition. The color palette features deep navy blues and soft cream accents to match the corporate-modern brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYeTs4xJOvA4IxMF-MfVSlOJpsgfZh9awMeXpxEyBinRDp5h6s-uVF0P340uGlImvr6mqRVL-uY_D1W3d25XhH0Sa0XvG7SB61Ndy-U0ewxU8Ftf-QP-35TjR0j_8rypLcs0TXpaBLPKfhOGDjKqFH9r29ZAD1NbmzTkJCXUH0YjNNKFMoSwCHeaQzJcnyoKoTT5hoONJgaeEpsIsZJ1II-TTJdjsQWGwUz-_MygGKp5bGMiR8oqygMGnatlVFEQO2L2Z4E9RJFDZ0"/>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-desktop">
+<div class="max-w-2xl">
+<span class="text-primary-fixed font-label-caps text-label-caps tracking-widest block mb-4">TRADIÇÃO DESDE 1996</span>
+<h1 class="text-on-primary font-headline text-headline-lg mb-6">Nossa História</h1>
+<p class="text-on-primary/80 font-body-lg text-body-lg leading-relaxed">
+                        Fundada no coração de Porto Velho, a Toca do Coelho nasceu do desejo de transformar o ato de cozinhar em uma experiência de excelência, unindo a robustez do profissionalismo à calidez do lar.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Content Section: The Journey -->
+<section class="py-margin-desktop bg-system-texture">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 space-y-6">
+<h2 class="text-primary font-headline text-headline-md">Referência em Porto Velho</h2>
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                        Desde 1996, a Toca do Coelho tem sido o ponto de encontro para quem busca mais do que simples utensílios. Localizada estrategicamente em Porto Velho, RO, nossa loja física tornou-se um marco de confiança tanto para donas de casa exigentes quanto para chefs renomados da região.
+                    </p>
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                        Nossa trajetória é marcada pela evolução constante. O que começou como uma pequena boutique de utilidades domésticas expandiu-se para um catálogo completo que atende desde o preparo da mesa posta até as demandas complexas de cozinhas industriais.
+                    </p>
+<div class="flex gap-12 pt-4">
+<div class="border-l-4 border-primary pl-4">
+<span class="block font-headline text-headline-sm text-primary">28+</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant">Anos de História</span>
+</div>
+<div class="border-l-4 border-primary pl-4">
+<span class="block font-headline text-headline-sm text-primary">15k+</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant">Clientes Atendidos</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+<img alt="Nossa Loja Física" class="w-full h-full object-cover" data-alt="A wide-angle, inviting exterior shot of a modern, high-end retail store building in Porto Velho during the golden hour. The storefront features large glass windows showcasing curated kitchenware displays. The building has a clean, professional architectural style with warm accent lighting. The overall mood is prestigious, established, and welcoming, reflecting a trusted local authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9XKvDZ2hSfz9caEx-ePnou0B5wGTWjdWssaS0GkKmMu4yjp23TuvBmcW2KjR0b6DMnw53GctCDsFOw8wdUTRmD_uoMfaoy94M-efmK_lRuU92BMsUY0avYsHZ-025BpeQpjeZWf3QH7oo1xHj_kSBrTUIVlTFhxYnOm9nHrpbt4ZCYYMMYkUDqZ4GmCHO8qL9RhT4rcZB8sdh29A9U8In8YkFxv-ZDMFQUXLKA12Q6DaKypfXCdy_4k_T7f1sCJ0YwhFXxpG4CWH3"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-primary p-6 rounded-lg shadow-xl hidden md:block">
+<p class="text-on-primary font-body-sm text-body-sm italic">"Qualidade que atravessa gerações em Rondônia."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Authority Section: Tradition & Commitment -->
+<section class="py-margin-desktop bg-primary text-on-primary overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline text-headline-md mb-4">Nossos Pilares</h2>
+<div class="w-24 h-1 bg-primary-fixed mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="flex gap-6 items-start p-8 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-[48px] text-primary-fixed">loyalty</span>
+<div>
+<h3 class="font-headline text-headline-sm mb-3">Tradição Regional</h3>
+<p class="text-on-primary-container opacity-90 font-body-md">Conhecemos as necessidades específicas do público rondoniense. Nossa curadoria de produtos reflete o estilo de vida e a culinária da nossa região, garantindo funcionalidade e estética para cada lar ou negócio.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start p-8 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all">
+<span class="material-symbols-outlined text-[48px] text-primary-fixed">verified_user</span>
+<div>
+<h3 class="font-headline text-headline-sm mb-3">Compromisso com o Cliente</h3>
+<p class="text-on-primary-container opacity-90 font-body-md">Não vendemos apenas produtos; entregamos soluções. Nosso atendimento é humanizado, focado em entender sua demanda para oferecer o equipamento exato que trará durabilidade e performance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission, Vision, Values: Bento Grid -->
+<section class="py-margin-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Mission -->
+<div class="bg-surface-container-low p-10 rounded-xl border border-outline-variant flex flex-col justify-between hover:shadow-lg transition-all group">
+<div>
+<span class="material-symbols-outlined text-primary text-[40px] mb-6 transition-transform group-hover:scale-110">rocket_launch</span>
+<h3 class="font-headline text-headline-sm text-primary mb-4">Missão</h3>
+<p class="text-on-surface-variant font-body-md">Prover excelência em utilidades domésticas e equipamentos profissionais, facilitando o cotidiano e elevando o padrão da gastronomia regional através de produtos de alta qualidade.</p>
+</div>
+</div>
+<!-- Vision -->
+<div class="bg-surface-container-low p-10 rounded-xl border border-outline-variant flex flex-col justify-between hover:shadow-lg transition-all group">
+<div>
+<span class="material-symbols-outlined text-primary text-[40px] mb-6 transition-transform group-hover:scale-110">visibility</span>
+<h3 class="font-headline text-headline-sm text-primary mb-4">Visão</h3>
+<p class="text-on-surface-variant font-body-md">Ser reconhecida como a principal autoridade e o destino número um em Porto Velho para soluções completas em cozinha, unindo tradição e inovação.</p>
+</div>
+</div>
+<!-- Values -->
+<div class="bg-surface-container-low p-10 rounded-xl border border-outline-variant hover:shadow-lg transition-all group">
+<span class="material-symbols-outlined text-primary text-[40px] mb-6 transition-transform group-hover:scale-110">diamond</span>
+<h3 class="font-headline text-headline-sm text-primary mb-4">Valores</h3>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                Ética e Transparência
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                Foco no Cliente
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                Qualidade Impecável
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                Valorização Regional
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Team / Lifestyle Section -->
+<section class="pb-margin-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="rounded-2xl overflow-hidden relative h-[450px] shadow-xl">
+<img alt="Nossa Equipe" class="w-full h-full object-cover" data-alt="A professional and friendly team photo of a diverse staff in a modern corporate setting. They are dressed in smart-casual professional attire, smiling warmly at the camera. The background is a clean, well-lit office or showroom with soft focus. The lighting is bright and optimistic, emphasizing a collaborative and trustworthy workplace culture aligned with the brand's welcoming personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDccAnHbkSfxsEoYtl8PgO63pZGwIng5FOgpnORAwxadgVWAea9XuxmHJhZ9wEHFDP4CoNPh7wSHy-TtwtQE-lBuoHmHN06IZU3-NfuxZ2ldr26Cfx0l1MxVjRjtTeguE6PpdoNNWaE1mSokieaiOPpncZCMEd2t7U3W4ovfkRynZIW90FihPEqtRWqUxWJnX34TYPDGuANI8jYqFaFzP9jPHLk4X-1o9e2txtksmYOvjfl7mcK2_8vZpJuH9bsZrAGpQvtpu42jBbg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex items-end p-12">
+<div class="max-w-xl">
+<h3 class="text-on-primary font-headline text-headline-md mb-2">Equipe Toca do Coelho</h3>
+<p class="text-on-primary/90 font-body-md">Especialistas prontos para ajudar você a escolher o melhor para sua casa ou negócio. Venha nos visitar e sinta-se parte da nossa família.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-[60] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center group" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho.">
+<span class="material-symbols-outlined text-[32px]">chat</span>
+<span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-300 font-label-caps text-label-caps whitespace-nowrap">Fale Conosco</span>
+</a>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="font-headline text-headline-sm font-bold text-on-primary">Toca do Coelho</div>
+<p class="font-body-sm text-body-sm opacity-80 max-w-xs leading-relaxed">
+                    Desde 1996, fornecendo os melhores produtos para sua cozinha em Porto Velho. Qualidade e confiança em cada detalhe.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-3">
+<h4 class="font-label-caps text-label-caps border-b border-white/20 pb-2 mb-2">Siga-nos</h4>
+<a class="font-body-sm text-body-sm opacity-80 hover:opacity-100 hover:text-primary-fixed transition-colors underline decoration-white/20" href="#">Instagram</a>
+<a class="font-body-sm text-body-sm opacity-80 hover:opacity-100 hover:text-primary-fixed transition-colors underline decoration-white/20" href="#">Facebook</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-label-caps text-label-caps border-b border-white/20 pb-2 mb-2">Legal</h4>
+<a class="font-body-sm text-body-sm opacity-80 hover:opacity-100 hover:text-primary-fixed transition-colors underline decoration-white/20" href="#">Política de Privacidade</a>
+<a class="font-body-sm text-body-sm opacity-80 hover:opacity-100 hover:text-primary-fixed transition-colors underline decoration-white/20" href="#">LGPD</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps border-b border-white/20 pb-2">Contato &amp; Horário</h4>
+<p class="font-body-sm text-body-sm opacity-80">
+                    Segunda a Sexta: 08h às 18h<br/>
+                    Porto Velho, RO.
+                </p>
+<div class="flex gap-4 pt-2">
+<span class="material-symbols-outlined text-primary-fixed">location_on</span>
+<span class="material-symbols-outlined text-primary-fixed">call</span>
+<span class="material-symbols-outlined text-primary-fixed">mail</span>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 py-6 text-center">
+<p class="font-body-sm text-body-sm opacity-60">© 2024 Toca do Coelho. Todos os direitos reservados. Porto Velho, RO.</p>
+</div>
+</footer>
+
+<script id="toca-navigation-fallback">
+  // Fallback simples para navegação local: mantém os links funcionando ao abrir pelo arquivo index.html.
+  document.addEventListener('click', function (event) {
+    var card = event.target.closest('[data-product-detail]');
+    if (card && !event.target.closest('a, button, input, label, select, textarea')) {
+      window.location.href = './detalhes-produto-toca-coelho.html';
+    }
+  });
+</script>
+</body></html>

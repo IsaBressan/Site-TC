@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contato - Toca do Coelho</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#74ff76",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#fefcff",
+                        "on-tertiary-fixed": "#002203",
+                        "on-secondary-fixed": "#1f1c00",
+                        "surface-container": "#eff1ca",
+                        "surface-variant": "#e3e5c0",
+                        "inverse-on-surface": "#f2f4cd",
+                        "on-secondary-container": "#6c6400",
+                        "on-primary-fixed-variant": "#004492",
+                        "surface-container-low": "#f4f6d0",
+                        "on-primary": "#ffffff",
+                        "background": "#fafcd5",
+                        "secondary-fixed": "#f6e620",
+                        "inverse-primary": "#acc7ff",
+                        "primary-fixed": "#d7e2ff",
+                        "primary": "#0059ba",
+                        "surface-container-highest": "#e3e5c0",
+                        "secondary-container": "#f3e31c",
+                        "inverse-surface": "#303219",
+                        "tertiary-fixed-dim": "#55e15d",
+                        "on-tertiary-container": "#f7fff1",
+                        "tertiary": "#006b19",
+                        "secondary": "#676000",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#717785",
+                        "surface-dim": "#dbddb8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#4e4800",
+                        "tertiary-container": "#008822",
+                        "surface": "#fafcd5",
+                        "outline-variant": "#c1c6d5",
+                        "surface-tint": "#005bbf",
+                        "surface-bright": "#fafcd5",
+                        "on-surface-variant": "#414753",
+                        "surface-container-high": "#e9ebc5",
+                        "on-surface": "#1b1d06",
+                        "on-error": "#ffffff",
+                        "primary-container": "#0071e9",
+                        "secondary-fixed-dim": "#d8ca00",
+                        "primary-fixed-dim": "#acc7ff",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1d06",
+                        "on-tertiary-fixed-variant": "#005311",
+                        "on-primary-fixed": "#001a40"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-soft {
+            box-shadow: 0 4px 20px rgba(0, 89, 186, 0.08);
+        }
+    </style>
+
+<style id="toca-navigation-fix">
+  /* Menu sempre visível e clicável, inclusive quando aberto pelo celular. */
+  .main-site-menu {
+    display: flex !important;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .main-site-menu a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    header > div,
+    header nav {
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+    .main-site-menu {
+      width: 100%;
+      justify-content: center;
+      overflow-x: auto;
+      padding-top: .5rem;
+      gap: 1rem;
+    }
+    .main-site-menu a {
+      white-space: nowrap;
+      font-size: .85rem;
+    }
+  }
+</style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline text-2xl font-bold text-primary">
+                Toca do Coelho
+            </div>
+<div class="main-site-menu flex gap-8 items-center">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="./index.html">Início</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="./produtos.html">Produtos</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="./promocoes.html">Promoções</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="./sobre.html">Sobre Nós</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-medium" href="./contato.html">Contato</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="bg-primary text-on-primary px-6 py-2 font-semibold rounded-lg hover:opacity-90 transition-all" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho." onclick="event.stopPropagation();" role="button" style="text-decoration: none">WhatsApp</a>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-desktop py-12 md:py-20">
+<!-- Hero Header -->
+<header class="mb-16">
+<h1 class="text-5xl font-bold mb-4 text-on-surface">Fale Conosco</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl">
+                Seja para equipar sua cozinha profissional ou encontrar o utensílio perfeito para sua casa, nossa equipe de especialistas está pronta para ajudar.
+            </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Contact Info Sidebar (4 columns) -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-low p-8 rounded-xl shadow-soft border border-outline-variant/30">
+<h2 class="text-2xl font-bold mb-8 text-primary">Informações</h2>
+<div class="space-y-6">
+<!-- Phone -->
+<div class="flex items-start gap-4">
+<span aria-hidden="true" class="material-symbols-outlined text-primary">call</span>
+<div>
+<p class="text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider">Telefone</p>
+<p class="text-base font-semibold text-on-surface">(69) 3221-0000</p>
+</div>
+</div>
+<!-- WhatsApp -->
+<div class="flex items-start gap-4">
+<span aria-hidden="true" class="material-symbols-outlined text-primary">chat</span>
+<div>
+<p class="text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider">WhatsApp</p>
+<p class="text-base font-semibold text-on-surface">(69) 99200-0000</p>
+</div>
+</div>
+<!-- Email -->
+<div class="flex items-start gap-4">
+<span aria-hidden="true" class="material-symbols-outlined text-primary">mail</span>
+<div>
+<p class="text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider">E-mail</p>
+<p class="text-base font-semibold text-on-surface">contato@tocadocoelho.com.br</p>
+</div>
+</div>
+<!-- Hours -->
+<div class="flex items-start gap-4">
+<span aria-hidden="true" class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<p class="text-xs font-bold text-on-surface-variant mb-1 uppercase tracking-wider">Horário de Funcionamento</p>
+<p class="text-base text-on-surface">Seg-Sex: 08h às 18h</p>
+<p class="text-base text-on-surface">Sáb: 08h às 12h</p>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-outline-variant/30">
+<p class="text-xs font-bold text-on-surface-variant mb-4 uppercase tracking-wider">Siga-nos</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">description</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Contact Form (8 columns) -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-soft border border-outline-variant/20">
+<h2 class="text-2xl font-bold mb-8 text-primary">Envie uma mensagem</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider" for="name">Nome Completo</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg p-3 transition-colors outline-none text-on-surface" id="name" placeholder="Seu nome" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider" for="email">E-mail</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg p-3 transition-colors outline-none text-on-surface" id="email" placeholder="seu@email.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider" for="subject">Assunto</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg p-3 transition-colors outline-none text-on-surface" id="subject" placeholder="Como podemos ajudar?" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider" for="message">Mensagem</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg p-3 transition-colors outline-none text-on-surface resize-none" id="message" placeholder="Escreva sua mensagem aqui..." rows="5"></textarea>
+</div>
+<button class="bg-primary text-on-primary font-bold py-4 px-10 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-all shadow-md flex items-center justify-center gap-3 w-full md:w-auto" type="submit">
+                            Enviar Mensagem
+                            <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+<!-- Map Section -->
+<section class="mt-20">
+<div class="rounded-2xl overflow-hidden shadow-soft border border-outline-variant/30 h-[450px] relative">
+<img alt="Store Location" class="w-full h-full object-cover grayscale-[10%] brightness-[0.95]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN-RFhiMFr9StnGPqf0N4HrBW8yFfDcOcb2SjZLoug3WgXdqr_ioW9OqsmCAL6hWE6raUXPBK9gXHRG77i1k63PRC47Bj3Pe46C5lkInGTL7azbjJ_4YVjOR_7aPHgK-bjFCuCGZDcTG01bgUUEHQccVPLjE464tBGczbXcSUeCQZicGecE2fWq2swDllVjM236YRe7RLNnanZE4KfeJBtqhTIRez4jTKKAy5p6kX0zRD8dfVaoEeu2EGRQt840Om3F_6CR1Q7tf92"/>
+<div class="absolute bottom-8 left-8 bg-surface-container-lowest p-6 rounded-xl shadow-2xl max-w-sm border border-primary/20">
+<h3 class="text-xl font-bold mb-2 text-primary">Nossa Loja Física</h3>
+<p class="text-base text-on-surface mb-4">Porto Velho, Rondônia - Brasil</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:underline" href="https://maps.google.com" target="_blank">
+                        Abrir no Google Maps
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary-container border-t border-primary/10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="text-2xl font-bold text-on-primary-container">Toca do Coelho</div>
+<p class="text-sm opacity-90 max-w-xs">
+                    Referência em utensílios de cozinha e gastronomia em Porto Velho há mais de duas décadas.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-xs font-bold uppercase tracking-wider mb-2">Navegação</h4>
+<a class="text-sm hover:text-on-primary transition-colors" href="#">Instagram</a>
+<a class="text-sm hover:text-on-primary transition-colors" href="#">Facebook</a>
+<a class="text-sm hover:text-on-primary transition-colors" href="#">Política de Privacidade</a>
+<a class="text-sm hover:text-on-primary transition-colors" href="#">LGPD</a>
+</div>
+<div class="space-y-4">
+<h4 class="text-xs font-bold uppercase tracking-wider">Contato &amp; Suporte</h4>
+<p class="text-sm">Horário: Seg-Sex 08h-18h</p>
+<p class="text-sm">Sáb 08h-12h</p>
+<p class="text-xs mt-8 opacity-70">
+                    © 2024 Toca do Coelho. Todos os direitos reservados. Porto Velho, RO.
+                </p>
+</div>
+</div>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-all group" href="https://wa.me/5569999999999?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Toca%20do%20Coelho.">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+<span class="absolute right-full mr-4 bg-primary text-on-primary px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Chame no Whats!</span>
+</a>
+
+<script id="toca-navigation-fallback">
+  // Fallback simples para navegação local: mantém os links funcionando ao abrir pelo arquivo index.html.
+  document.addEventListener('click', function (event) {
+    var card = event.target.closest('[data-product-detail]');
+    if (card && !event.target.closest('a, button, input, label, select, textarea')) {
+      window.location.href = './detalhes-produto-toca-coelho.html';
+    }
+  });
+</script>
+</body></html>
